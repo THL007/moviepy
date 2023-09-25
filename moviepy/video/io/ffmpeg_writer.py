@@ -79,6 +79,7 @@ class FFMPEG_VideoWriter:
         # order is important
         cmd = [
             get_setting("FFMPEG_BINARY"),
+            '-hwaccel', 'cuvid',
             '-y',
             '-loglevel', 'error' if logfile == sp.PIPE else 'info',
             '-f', 'rawvideo',
